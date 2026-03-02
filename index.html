@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estácio | Modo Claro Playtime</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div id="page-loader" class="page-loader">
+        <div class="loader-content">
+            <i class="fa-solid fa-puzzle-piece loader-icon"></i>
+            <h2>ESTÁCIO <span class="highlight">PLAYTIME</span></h2>
+            <p>Preparando seu crachá...</p>
+            <div class="loading-bar">
+                <div class="progress"></div>
+            </div>
+        </div>
+    </div>
+   <header>
+    <div class="header-container">
+        <div class="logo">
+            <i class="fa-solid fa-puzzle-piece"></i>
+            <span>SEU <span class="highlight">FUTURO</span></span>
+        </div>
+        
+        <nav class="nav-desktop">
+            <ul>
+                <li><a href="#">Cursos</a></li>
+                <li><a href="#">A Fábrica</a></li>
+                <li><a href="#">Unidades</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-right">
+            <a href="./html/login.html" class="btn-login desktop-only"><i class="fa-solid fa-user"></i> LOGIN</a>
+            <a href="./html/inscricao.html" class="btn-inscreva desktop-only">INSCREVA-SE</a>
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </div>
+
+   <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <i class="fa-solid fa-xmark close-menu" id="closeMenu"></i>
+        </div>
+        
+        <div class="mobile-botoes-topo">
+            <a href="./html/login.html" class="btn-login w-100" style="text-decoration: none; display: flex;"><i class="fa-solid fa-user"></i> LOGIN PORTAL</a>
+        </div>
+
+        <ul>
+            <li><a href="#"><i class="fa-solid fa-graduation-cap"></i> Cursos</a></li>
+            <li><a href="#"><i class="fa-solid fa-industry"></i> A Fábrica</a></li>
+            <li><a href="#"><i class="fa-solid fa-location-dot"></i> Unidades</a></li>
+            <li><a href="#"><i class="fa-solid fa-headset"></i> Suporte</a></li>
+        </ul>
+        
+        <a href="./html/inscricao.html" class="btn-inscreva w-100" style="text-decoration: none; display: flex;">INSCREVA-SE AGORA</a>
+    </div>
+</header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="breadcrumb">INÍCIO</div>
+            <h1>Sua carreira  <br>começa aqui,</h1>
+            <p>Os melhores cursos para quem quer dominar o mercado, com o estilo vibrante dos brinquedos da Playtime Co.</p>
+        </div>
+    </section>
+
+    <div class="search-section">
+        <div class="search-container">
+            <div class="input-group">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="searchInput" placeholder="O que você quer aprender?">
+            </div>
+            <button id="searchBtn" class="btn-search" disabled>BUSCAR</button>
+        </div>
+    </div>
+
+    <section class="areas-interesse">
+        <h2>Áreas de Interesse</h2>
+        
+        <div class="grid-areas">
+            <div class="area-item">
+                <div class="icon-block azul-principal"><i class="fa-solid fa-code"></i></div>
+                <span>T.I.</span>
+            </div>
+            <div class="area-item">
+                <div class="icon-block vermelho-principal"><i class="fa-solid fa-heart-pulse"></i></div>
+                <span>Saúde</span>
+            </div>
+            <div class="area-item">
+                <div class="icon-block amarelo-principal"><i class="fa-solid fa-chalkboard-user"></i></div>
+                <span>Educação</span>
+            </div>
+            <div class="area-item">
+                <div class="icon-block azul-principal"><i class="fa-solid fa-business-time"></i></div>
+                <span>Gestão</span>
+            </div>
+            <div class="area-item">
+                <div class="icon-block vermelho-principal"><i class="fa-solid fa-gavel"></i></div>
+                <span>Direito</span>
+            </div>
+        </div>
+    </section>
+
+      <section class="cursos-destaque">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge">Novidades</span>
+                <h2>Cursos mais Procurados</h2>
+            </div>
+
+            <div class="grid-cursos">
+                <div class="curso-card border-azul">
+                    <div class="curso-tag bg-azul">Tecnologia</div>
+                    <div class="curso-info">
+                        <h3>Análise e Desenvolvimento de Sistemas</h3>
+                        <p>Crie o futuro com códigos e inovação na fábrica de talentos.</p>
+                        <div class="curso-footer">
+                            <span class="duracao"><i class="fa-regular fa-clock"></i> 2.5 anos</span>
+                            <button class="btn-ver-mais text-azul">Explorar <i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="curso-card border-vermelho">
+                    <div class="curso-tag bg-vermelho">Saúde</div>
+                    <div class="curso-info">
+                        <h3>Enfermagem</h3>
+                        <p>Cuide da saúde com dedicação e as melhores práticas do mercado.</p>
+                        <div class="curso-footer">
+                            <span class="duracao"><i class="fa-regular fa-clock"></i> 4 anos</span>
+                            <button class="btn-ver-mais text-vermelho">Explorar <i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="curso-card border-amarelo">
+                    <div class="curso-tag bg-amarelo">Gestão</div>
+                    <div class="curso-info">
+                        <h3>Administração</h3>
+                        <p>Lidere processos e pessoas com foco em resultados reais.</p>
+                        <div class="curso-footer">
+                            <span class="duracao"><i class="fa-regular fa-clock"></i> 4 anos</span>
+                            <button class="btn-ver-mais text-amarelo">Explorar <i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="curso-card border-azul">
+                    <div class="curso-tag bg-azul">Comunicação</div>
+                    <div class="curso-info">
+                        <h3>Marketing Digital</h3>
+                        <p>Domine as redes e estratégias que fazem o mundo girar.</p>
+                        <div class="curso-footer">
+                            <span class="duracao"><i class="fa-regular fa-clock"></i> 2 anos</span>
+                            <button class="btn-ver-mais text-azul">Explorar <i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="curso-card border-vermelho">
+                    <div class="curso-tag bg-vermelho">Engenharia</div>
+                    <div class="curso-info">
+                        <h3>Engenharia Mecânica</h3>
+                        <p>Projete, construa e dê vida aos maquinários que movem nossa fábrica.</p>
+                        <div class="curso-footer">
+                            <span class="duracao"><i class="fa-regular fa-clock"></i> 5 anos</span>
+                            <button class="btn-ver-mais text-vermelho">Explorar <i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="curso-card border-amarelo">
+                    <div class="curso-tag bg-amarelo">Educação</div>
+                    <div class="curso-info">
+                        <h3>Pedagogia</h3>
+                        <p>Desenvolva e guie as mentes curiosas no melhor ambiente de aprendizado.</p>
+                        <div class="curso-footer">
+                            <span class="duracao"><i class="fa-regular fa-clock"></i> 4 anos</span>
+                            <button class="btn-ver-mais text-amarelo">Explorar <i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="./JS/index.js.js"></script>
+    <script src="./JS/loader.js"></script>
+</body>
+
+</html>
+
+

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscrição | Estácio Playtime</title>
+    <link rel="stylesheet" href="/CSS/inscricao.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div id="page-loader" class="page-loader">
+        <div class="loader-content">
+            <i class="fa-solid fa-puzzle-piece loader-icon"></i>
+            <h2>ESTÁCIO <span class="highlight">PLAYTIME</span></h2>
+            <p>Preparando seu crachá...</p>
+            <div class="loading-bar">
+                <div class="progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <a href="/index.html" class="btn-voltar">
+        <i class="fa-solid fa-arrow-left"></i> Voltar para a Fábrica
+    </a>
+
+    <div class="login-container">
+        
+        <div class="box animation-entry">
+            
+            <div class="login-card">
+                
+                <div class="logo">
+                    <i class="fa-solid fa-puzzle-piece"></i>
+                    <span>ESTÁCIO <span class="highlight">PLAYTIME</span></span>
+                </div>
+
+                <h2>Nova Admissão</h2>
+                <p>Preencha os dados para criar seu crachá de acesso.</p>
+
+                <form action="#">
+                    <div class="input-container">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" placeholder="Nome Completo" required>
+                    </div>
+
+                    <div class="input-container">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input type="email" placeholder="E-mail" required>
+                    </div>
+
+                    <div class="input-container">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        <select id="curso-select" required>
+                            <option value="" disabled selected>Carregando catálogo da fábrica...</option>
+                        </select>
+                    </div>
+
+                    <div class="input-container">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" placeholder="Crie uma Senha" required>
+                    </div>
+
+                    <button type="submit" class="btn-inscrever">GERAR CRACHÁ <i class="fa-solid fa-id-badge"></i></button>
+                </form>
+
+                <div class="login-footer">
+                    Já é funcionário/aluno? <a href="login.html">Faça login aqui</a>
+                </div>
+
+            </div> </div> </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const cursoSelect = document.getElementById('curso-select');
+
+        async function carregarCursosDoBackend() {
+            try {
+                // SIMULADOR DE BACKEND
+                const dadosDoBackend = [
+                    { id_curso: "eng_brinquedos", nome: "Engenharia de Brinquedos" },
+                    { id_curso: "ia", nome: "Inteligência Artificial (IA)" },
+                    { id_curso: "design", nome: "Design de Personagens" },
+                    { id_curso: "mecanica", nome: "Engenharia Mecânica" },
+                    { id_curso: "pedagogia", nome: "Pedagogia" },
+                    { id_curso: "robotica", nome: "Robótica Avançada (NOVO!)" }
+                ];
+
+                setTimeout(() => {
+                    cursoSelect.innerHTML = '<option value="" disabled selected>Escolha seu Curso...</option>';
+                    dadosDoBackend.forEach(curso => {
+                        const option = document.createElement('option');
+                        option.value = curso.id_curso;
+                        option.textContent = curso.nome;
+                        cursoSelect.appendChild(option);
+                    });
+                }, 500);
+
+            } catch (erro) {
+                console.error('Falha de comunicação com o servidor da fábrica:', erro);
+                cursoSelect.innerHTML = '<option value="" disabled selected>Erro ao carregar os cursos.</option>';
+            }
+        }
+        carregarCursosDoBackend();
+    });
+    </script>
+
+    <script src="/JS/loader.js"></script>
+</body>
+</html>

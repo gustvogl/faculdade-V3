@@ -1,0 +1,773 @@
+:root {
+    /* Paleta extraída da imagem */
+    --vermelho-principal: #f33a2f; /* Vermelho vibrante */
+    --azul-principal: #00bef0;     /* Azul vivo */
+    --amarelo-principal: #f4d01c;  /* Amarelo brilhante */
+    
+    /* Variáveis de Texto e Fundo - Modo Claro */
+    --branco: #ffffff;
+    --preto: #000000;
+    --texto-principal: #000000;
+    --texto-secundario: #444444;
+    --cinza-claro: #f4f7f9;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--branco);
+    color: var(--texto-principal);
+    line-height: 1.6;
+}
+
+/* --- Header Moderno Playtime --- */
+header {
+    background: var(--branco);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 15px 0;
+    /* Removemos a borda simples e colocamos uma sombra flutuante azulada */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+    box-shadow: 0 10px 30px rgba(0, 190, 240, 0.1); 
+    transition: all 0.3s ease;
+}
+
+/* A Mágica: Linha colorida no topo da tela (Azul, Amarelo e Vermelho) */
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(90deg, 
+        var(--azul-principal) 0%, var(--azul-principal) 33.3%, 
+        var(--amarelo-principal) 33.3%, var(--amarelo-principal) 66.6%, 
+        var(--vermelho-principal) 66.6%, var(--vermelho-principal) 100%);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5px; /* Compensa o espaço da linha colorida */
+}
+
+/* Animação na Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--azul-principal);
+    font-size: 24px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.logo:hover {
+    transform: scale(1.05) rotate(-2deg); /* Dá uma balançada de brinquedo */
+}
+
+.logo i {
+    color: var(--vermelho-principal);
+    font-size: 30px;
+    filter: drop-shadow(0 4px 0 rgba(243, 58, 47, 0.2)); /* Sombra no ícone */
+}
+
+.logo .highlight {
+    color: var(--amarelo-principal);
+    font-weight: 800;
+    font-size: 0.85em;
+    text-shadow: 1px 1px 0px rgba(0,0,0,0.1);
+}
+
+
+
+/* --- Estilo do Menu (Formato de Pílula) --- */
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 5px;
+    background-color: var(--cinza-claro); /* Fundo juntando os links */
+    padding: 6px 12px;
+    border-radius: 50px;
+    border: 1px solid rgba(0, 190, 240, 0.1);
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--texto-secundario);
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 10px 20px;
+    border-radius: 50px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: inline-block;
+}
+
+nav a:hover { 
+    background-color: var(--azul-principal);
+    color: var(--branco);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 190, 240, 0.3);
+}
+
+/* --- Ajuste nos botões para alinhamento perfeito --- */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.btn-inscreva {
+    background: var(--vermelho-principal); /* Botão principal vermelho */
+    color: white;
+    border: none;
+    padding: 10px 28px;
+    border-radius: 50px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-inscreva:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(243, 58, 47, 0.4);
+}
+
+/* --- Hero --- */
+.hero {
+    background-color: var(--cinza-claro);
+    color: var(--texto-principal);
+    padding: 80px 20px 120px;
+    text-align: center;
+    border-bottom: 5px solid var(--azul-principal); /* Barra azul no rodapé do Hero */
+}
+
+.hero-content { max-width: 800px; margin: 0 auto; }
+
+.breadcrumb {
+    font-size: 0.85rem;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--azul-principal); /* Breadcrumb azul */
+    font-weight: 700;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    margin-bottom: 20px;
+    line-height: 1.1;
+    color: var(--preto);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: var(--texto-secundario);
+}
+
+/* --- Search --- */
+.search-section {
+    max-width: 900px;
+    margin: -50px auto 60px;
+    padding: 0 20px;
+}
+
+.search-container {
+    background: white;
+    padding: 12px;
+    border-radius: 100px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    gap: 10px;
+    border: 2px solid var(--azul-principal); /* Borda azul */
+}
+
+.input-group {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding-left: 25px;
+}
+
+.input-group i { color: var(--azul-principal); }
+
+.input-group input {
+    border: none;
+    padding: 15px;
+    width: 100%;
+    outline: none;
+    font-size: 1rem;
+}
+
+.btn-search {
+    background: #dfe6e9;
+    color: #b2bec3;
+    border: none;
+    padding: 0 35px;
+    border-radius: 50px;
+    font-weight: 700;
+    cursor: not-allowed;
+    transition: all 0.3s;
+}
+
+.btn-search.active {
+    background: var(--amarelo-principal); /* Botão de busca ativo amarelo */
+    color: #333; /* Texto escuro para contraste */
+    cursor: pointer;
+}
+
+/* --- Areas --- */
+.areas-interesse {
+    max-width: 1200px;
+    margin: 0 auto 100px;
+    padding: 0 20px;
+}
+
+.areas-interesse h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 50px;
+    color: var(--azul-principal); /* Título azul */
+}
+
+.grid-areas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 30px;
+    justify-content: center;
+}
+
+.area-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.icon-block {
+    width: 100px;
+    height: 100px;
+    border-radius: 20px; /* Cantos arredondados, mas ainda um bloco */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 38px;
+    color: white;
+    margin-bottom: 15px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 5px 0 rgba(0,0,0,0.1); /* Efeito 3D sutil na base do bloco */
+}
+
+/* Cores específicas para cada área (Blocos de brinquedo) */
+.azul-principal   { background-color: var(--azul-principal); }
+.vermelho-principal { background-color: var(--vermelho-principal); }
+.amarelo-principal  { background-color: var(--amarelo-principal); color: #333; }
+
+.area-item:hover .icon-block {
+    transform: translateY(-10px) rotate(5deg);
+}
+
+.area-item span {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--texto-secundario);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2.5rem; }
+    nav { display: none; }
+    .search-container { border-radius: 20px; flex-direction: column; }
+    .btn-search { padding: 15px; }
+}
+
+/* --- Cursos Destaque --- */
+.cursos-destaque {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.container .section-header {
+    margin-bottom: 40px;
+}
+
+.badge {
+    background-color: var(--amarelo-principal);
+    color: #000;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: 800;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+}
+
+.grid-cursos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.curso-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+    border-bottom: 6px solid transparent; /* Efeito de base do bloco */
+}
+
+.curso-card:hover {
+    transform: translateY(-8px);
+}
+
+/* Bordas baseadas na imagem */
+.border-azul { border-color: var(--azul-principal); }
+.border-vermelho { border-color: var(--vermelho-principal); }
+.border-amarelo { border-color: var(--amarelo-principal); }
+
+.curso-tag {
+    display: inline-block;
+    padding: 8px 20px;
+    color: white;
+    font-weight: 700;
+    font-size: 0.8rem;
+    border-bottom-right-radius: 15px;
+}
+
+/* Cores das Tags */
+.bg-azul { background-color: var(--azul-principal); }
+.bg-vermelho { background-color: var(--vermelho-principal); }
+.bg-amarelo { background-color: var(--amarelo-principal); color: #333; }
+
+.curso-info {
+    padding: 25px;
+}
+
+.curso-info h3 {
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+    font-weight: 800;
+}
+
+.curso-info p {
+    font-size: 0.95rem;
+    color: var(--texto-secundario);
+    margin-bottom: 20px;
+}
+
+.curso-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+.duracao {
+    font-size: 0.85rem;
+    color: #888;
+    font-weight: 600;
+}
+
+.btn-ver-mais {
+    background: none;
+    border: none;
+    font-weight: 800;
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Cores de Texto dos Botões */
+.text-azul { color: var(--azul-principal); }
+.text-vermelho { color: var(--vermelho-principal); }
+.text-amarelo { color: var(--amarelo-principal); }
+
+/* --- Ajustes de Responsividade Global --- */
+
+/* Ajuste do Header para Celular */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    nav ul {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav a {
+        font-size: 0.8rem;
+    }
+
+    .btn-inscreva {
+        width: 100%; /* Botão ocupa a largura toda no celular */
+        padding: 12px;
+    }
+}
+
+/* Ajuste do Hero para Celular */
+@media (max-width: 600px) {
+    .hero {
+        padding: 60px 20px 100px;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem; /* Diminui o texto para não quebrar a tela */
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+}
+
+/* Ajuste da Barra de Pesquisa */
+@media (max-width: 768px) {
+    .search-section {
+        margin-top: -60px;
+    }
+
+    .search-container {
+        flex-direction: column; /* Input em cima, botão embaixo */
+        border-radius: 20px;
+        padding: 10px;
+    }
+
+    .input-group {
+        padding-left: 10px;
+    }
+
+    .btn-search {
+        width: 100%;
+        padding: 15px;
+        border-radius: 15px;
+    }
+}
+
+/* Grid de Áreas de Interesse Responsivo */
+.grid-areas {
+    display: grid;
+    /* No desktop: colunas de 140px. No celular: ajusta sozinho */
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); 
+    gap: 20px;
+    justify-items: center;
+}
+
+/* Grid de Cursos Responsivo */
+.grid-cursos {
+    display: grid;
+    /* Cria colunas de no mínimo 280px. Se não couber, pula pra baixo */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+@media (max-width: 480px) {
+    .grid-cursos {
+        grid-template-columns: 1fr; /* Força 1 coluna em celulares muito pequenos */
+    }
+    
+    .icon-block {
+        width: 80px;
+        height: 80px;
+        font-size: 30px;
+    }
+}
+
+/* --- Menu Hambúrguer e Mobile --- */
+.menu-toggle {
+    display: none; /* Escondido no desktop */
+    background: var(--azul-principal);
+    color: white;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 0 #0096bd;
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Começa fora da tela */
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    background: var(--branco);
+    z-index: 2000;
+    padding: 30px;
+    box-shadow: -5px 0 20px rgba(0,0,0,0.1);
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-left: 5px solid var(--azul-principal);
+}
+
+.mobile-menu.active {
+    right: 0; /* Entra na tela */
+}
+
+.mobile-menu-header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 30px;
+}
+
+.close-menu {
+    font-size: 2rem;
+    color: var(--vermelho-principal);
+    cursor: pointer;
+}
+
+.mobile-menu ul {
+    list-style: none;
+    margin-bottom: 40px;
+}
+
+.mobile-menu ul li {
+    margin-bottom: 25px;
+}
+
+.mobile-menu ul li a {
+    text-decoration: none;
+    color: var(--texto-principal);
+    font-weight: 800;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.mobile-menu ul li a i {
+    color: var(--azul-principal);
+}
+
+/* --- Ajustes Responsivos --- */
+@media (max-width: 768px) {
+    .nav-desktop, .desktop-only {
+        display: none; /* Esconde menu comum no celular */
+    }
+
+    .menu-toggle {
+        display: block; /* Mostra o botão hambúrguer */
+    }
+
+    .header-container {
+        flex-direction: row; /* Mantém logo e botão na mesma linha */
+        justify-content: space-between;
+    }
+}
+
+/* --- Organização dos botões no Header --- */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espaço entre os botões */
+}
+
+/* --- Estilo do Botão de Login (Amarelo Playtime) --- */
+.btn-login {
+    background-color: var(--amarelo-principal);
+    color: #111; /* Texto bem escuro para dar leitura */
+    border: none;
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-weight: 800;
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 0 #d4b517; /* Efeito 3D de bloco */
+}
+
+.btn-login:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 #d4b517;
+}
+
+.btn-login:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 #d4b517; /* Efeito de botão sendo apertado */
+}
+
+/* Utilitário para os botões do Mobile ocuparem a largura toda */
+.w-100 {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.mobile-botoes-topo {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px dashed #eee; /* Linha tracejada separando o login do menu */
+}
+/* --- Botão de Dark Mode --- */
+.theme-toggle {
+    background: transparent;
+    color: var(--texto-principal);
+    border: 2px solid var(--azul-principal);
+    width: 42px;
+    height: 42px;
+    border-radius: 50%; /* Botão redondinho */
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    background: var(--azul-principal);
+    color: white;
+    transform: scale(1.1) rotate(-15deg);
+    box-shadow: 0 4px 10px rgba(0, 190, 240, 0.3);
+}
+
+/* --- Variáveis do Modo Escuro (Fábrica Apagada) --- */
+/* Quando o body tiver o atributo data-theme="dark", essas cores substituem as claras */
+[data-theme="dark"] {
+    --branco: #121212;         /* Fundo principal vira quase preto */
+    --cinza-claro: #1e1e1e;    /* Fundo de seções vira cinza escuro */
+    --texto-principal: #f0f0f0;/* Texto fica claro */
+    --texto-secundario: #a0a0a0;
+}
+
+/* Transição suave para todas as trocas de cor de fundo e texto */
+body, header, .hero, .search-container, .curso-card, .mobile-menu {
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Ajustes finos para o Modo Escuro */
+[data-theme="dark"] header {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid #333;
+}
+
+[data-theme="dark"] .search-container,
+[data-theme="dark"] .curso-card {
+    background-color: #1a1a1a;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .input-group input {
+    color: var(--texto-principal);
+}
+
+[data-theme="dark"] .btn-login {
+    color: #000; /* Garante que o texto do botão amarelo fique escuro */
+}
+/* --- Tela de Carregamento (Loader) --- */
+.page-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--cinza-claro); /* Usa a cor de fundo padrão */
+    z-index: 99999; /* Fica acima de TUDO no site */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+/* Classe que o JavaScript vai usar para esconder a tela */
+.page-loader.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Ícone girando em 3D */
+.loader-icon {
+    font-size: 50px;
+    color: var(--vermelho-principal);
+    animation: giroBrinquedo 2s infinite ease-in-out;
+}
+
+@keyframes giroBrinquedo {
+    0% { transform: rotateY(0deg) scale(1); }
+    50% { transform: rotateY(180deg) scale(1.2); color: var(--azul-principal); }
+    100% { transform: rotateY(360deg) scale(1); color: var(--amarelo-principal); }
+}
+
+.loader-content h2 {
+    color: var(--azul-principal);
+    font-weight: 900;
+    font-size: 1.5rem;
+    letter-spacing: -1px;
+}
+
+.loader-content .highlight {
+    color: var(--amarelo-principal);
+}
+
+.loader-content p {
+    color: var(--texto-secundario);
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+/* Barra de Progresso */
+.loading-bar {
+    width: 200px;
+    height: 8px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    margin-top: 10px;
+}
+
+.progress {
+    width: 0%;
+    height: 100%;
+    background-color: var(--azul-principal);
+    border-radius: 10px;
+    animation: carregarBarra 1s infinite linear;
+}
+
+/* Animação da barrinha enchendo */
+@keyframes carregarBarra {
+    0% { width: 0%; transform: translateX(-100%); }
+    50% { width: 100%; transform: translateX(0); }
+    100% { width: 100%; transform: translateX(100%); }
+}
+
+/* Se o site estiver no Dark Mode, o loader acompanha */
+[data-theme="dark"] .page-loader {
+    background-color: #121212;
+}
